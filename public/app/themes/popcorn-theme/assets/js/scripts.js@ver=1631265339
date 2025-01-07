@@ -1,0 +1,83 @@
+jQuery( document ).ready( function($) {
+	        
+    
+    /*-- Hero Carousel Initialization --*/
+	$( '.hero-carousel__slides' ).slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: true,
+		autoplay: true,
+		autoplaySpeed: 4000,
+        pauseOnHover: false
+	});
+
+    /*-- Certificate--*/
+    $( '.certificate' ).slick({
+        infinite: true,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        pauseOnHover: false,
+        slidesToShow: 5,
+        slidesToScroll: 2,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 4
+              }
+            },
+            {
+              breakpoint: 800,
+              settings: {
+                slidesToShow: 3
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2
+              }
+            }
+        ]
+    });
+
+	/*-- Fancybox Initialization --*/
+    $("[data-fancybox]").fancybox();
+
+    /*-- MOBILE NAVIGATION --*/
+    // remove any pre determined classes on nav & body
+    $( "body" ).removeClass( "nav-open" );
+    $( ".site-header__nav" ).removeClass( "nav-open" );
+    $( ".nav-toggle" ).removeClass( "active" );
+
+    // on click of navigation toggle
+    $( ".js-toggle" ).on( "click", function() {
+
+    	// toggle class on body
+    	$( "body" ).toggleClass( "nav-open" );
+    	// toggle class on nav
+    	$( ".site-header__nav" ).toggleClass( "nav-open" );
+    	// toggle class on .nav-toggle
+    	$( ".nav-toggle" ).toggleClass( "active" );
+
+    });
+
+    $( window ).resize(function() {
+
+        var windowSize = $(window).width();
+
+        if( windowSize >= 1025 ) {
+
+            $( "body" ).removeClass( "nav-open" );
+            $( ".site-header__nav" ).removeClass( "nav-open" );
+            $( ".nav-toggle" ).removeClass( "active" );
+
+        }
+
+    }).resize();
+    
+});

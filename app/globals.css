@@ -19,3 +19,39 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.hero-carousel__top-line {
+  font-size: 72px; /* Default for larger screens (PC) */
+}
+
+.btn123{
+  font-size: 15px !important;
+}
+
+.site-header {
+  padding: 35px !important;
+}
+
+@media (max-width: 768px) {
+  .hero-carousel__top-line {
+    font-size: 25px; /* For mobile screens */
+  }
+  .btn123{
+    font-size: 11px !important;
+  }
+  .site-header__logo{
+    width: 70%;
+  }
+  .site-header {
+    padding: 18px !important;
+}
+ 
+}
+
+
+.slick-slide{
+  text-align: center;
+  text-align: -webkit-center; 
+}
+

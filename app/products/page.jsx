@@ -1,13 +1,13 @@
 "use client";
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import Header from "../_components/Header";
-import React, { useState, useEffect } from "react";
+import Header from "../_components/Header"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "../_components/Footer";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
+import React, { useState, useEffect, Suspense } from 'react';
 
-const Dashboard = () => {
+const Dashboard = ({cat,brnd}) => {
   const [allTemp, setTemp] = useState([]);       
   const [allProd, setProd] = useState([]);        
   const [allParts, setParts] = useState([]);     
@@ -24,9 +24,7 @@ const Dashboard = () => {
   const [totalItemsCount, setTotalItemsCount] = useState(0); // Total number of items
 
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const cat = searchParams.get('cat');  
-  const brnd = searchParams.get('brand');  
+
 
   // Fetch "allTemp" (Default Data) - All Products
   useEffect(() => {
@@ -193,8 +191,7 @@ const Dashboard = () => {
   const allItemsLoaded = visibleItemsCount >= totalItemsCount; // Check if all items are displayed
 
   return (
-    <>
-      <Header />
+    <> 
       <link rel="dns-prefetch" href="https://code.jquery.com/" />
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/" />
       <link rel="dns-prefetch" href="https://maps.googleapis.com/" />
@@ -448,10 +445,30 @@ const Dashboard = () => {
           )}
         </main>
       </div>
+ 
+    </>
+  );
+};
 
+
+const PageWrapper = () => { 
+  const searchParams = useSearchParams();
+  const cat = searchParams.get('cat');  
+  const brnd = searchParams.get('brand');  
+
+  return <Dashboard cat={cat} brnd={brnd} />;
+};
+
+const Page = () => {
+  return (
+    <>
+      <Header />
+      <Suspense fallback={<div>Loading parameters...</div>}>
+        <PageWrapper />
+      </Suspense>
       <Footer />
     </>
   );
 };
 
-export default Dashboard;
+export default Page;

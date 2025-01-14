@@ -132,7 +132,10 @@ const Header = () => {
 
 
 
-        <div id="div2"  >
+
+      </div>
+
+      <div id="div2"  >
         <Link href="/checkout" style={{ padding: 0, margin: 0 }}>
           <svg
             viewBox="0 0 24 24"
@@ -179,9 +182,6 @@ const Header = () => {
           </svg>
         </Link>
       </div>
-      </div>
-
-
 
       <div className={`nav-toggle ${isNavOpen ? 'active' : ''}`}
         onClick={handleToggleNav}>

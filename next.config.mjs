@@ -4,6 +4,7 @@ const nextConfig = {
         domains: ['ucarecdn.com'],
       },
       exportTrailingSlash: true,
+      
 };
 
 export default nextConfig;

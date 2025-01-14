@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   />
   {/* This site is optimized with the Yoast SEO plugin v20.8 - https://yoast.com/wordpress/plugins/seo/ */}
-  <title>Diesel Generators For Sale - Power Generator Experts GPS</title>
+  <title>GMS Power Generation</title>
   <meta
     name="description"
     content="Diesel generators for sale, hire servicing & maintenance. Businesses & events in Hertfordshire, Essex and South East. Based Herts SG12 8PP."

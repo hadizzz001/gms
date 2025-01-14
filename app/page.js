@@ -77,7 +77,7 @@ export default function Home() {
                 </h4>
               </div>
               <div className="services-button">
-                <a href="index.html@p=319.html" className="button">
+                <a href="/products" className="button">
                   More about Sales
                 </a>
               </div>
@@ -97,7 +97,7 @@ export default function Home() {
                 </h4>
               </div>
               <div className="services-button">
-                <a href="index.html@p=124.html" className="button">
+                <a href="/services" className="button">
                   More about Maintenance
                 </a>
               </div>
@@ -116,7 +116,7 @@ export default function Home() {
                 </h4>
               </div>
               <div className="services-button">
-                <a href="index.html@p=315.html" className="button">
+                <a href="/services" className="button">
                   More about Hire
                 </a>
               </div>
@@ -133,7 +133,7 @@ export default function Home() {
                 <h4 style={{ textAlign: "center" }}>Speak to our team</h4>
               </div>
               <div className="services-button">
-                <a href="index.html@p=68.html" className="button">
+                <a href="/contact" className="button">
                   Get in Touch
                 </a>
               </div>

@@ -55,3 +55,27 @@ body {
   text-align: -webkit-center; 
 }
 
+
+
+
+@media (max-width: 768px) {
+  #div1 {
+      display: none;
+  }
+  #div2 {
+      display: block;
+      position: absolute;
+    right: 6em;
+    top: 2em;
+  }
+}
+
+/* Show div1 and hide div2 on desktop */
+@media (min-width: 769px) {
+  #div1 {
+      display: block;
+  }
+  #div2 {
+      display: none;
+  }
+}

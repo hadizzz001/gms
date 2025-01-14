@@ -20,6 +20,9 @@ const Footer = () => {
                 <li className="socials__icon icon--twitter">
                   <a href="http://www.twitter.com/gps_limited" target="_blank" />
                 </li>
+                <li className="socials__icon icon--whatsapp">
+                  <a href="http://www.twitter.com/gps_limited" target="_blank" />
+                </li>
               </ul>
             </div>
           </div>

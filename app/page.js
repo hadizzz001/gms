@@ -11,7 +11,55 @@ import ProductsCarousel from "./_components/ProductsCarousel";
 
 
 export default function Home() {
+  const [desc, setDesc] = useState("");
+  const [servicesData, setServicesData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+
+  useEffect(() => {
+    const fetchDescription = async () => {
+      try {
+        const response = await fetch("api/homeA");
+        const data = await response.json();
+        setDesc(data[0].desc);
+        console.log("data are: ", data);
+
+      } catch (error) {
+        console.error("Error fetching the description:", error);
+      }
+    };
+
+    fetchDescription();
+  }, []);
+
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await fetch("api/homeS"); // Replace with the actual API endpoint
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setServicesData(data); // Set the services data to state
+      } catch (err) {
+        setError(err.message); // Capture any errors during the fetch
+      } finally {
+        setLoading(false); // Set loading to false after the fetch completes
+      }
+    };
+
+    fetchServices();
+  }, []); // The empty array ensures this effect runs only once, like componentDidMount
+
+  if (loading) {
+    return <p>Loading services...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
 
 
@@ -40,104 +88,51 @@ export default function Home() {
 
         <div className="section--cta" style={{ backgroundColor: "#0b5cad" }}>
           <div className="section--cta section--cta--inner">
-            <h3 className="section--title section--title--white">
-              GMS - More Power to You
-            </h3>
-            <h1 style={{ textAlign: "center" }}>
-              <strong>Generator specialist since 1984</strong>
-            </h1>
-            <p style={{ textAlign: "center" }}>
-  GMS is a family-run business based in Lebanon, specializing in the sale, supply, installation, repair, and hire of diesel generators.
-</p>
-<p style={{ textAlign: "center" }}>
-  With over 35 years of experience, our skilled team has been assisting customers with their generator needs. Our expertise in the generator industry allows us to provide tailored advice to meet your specific requirements, regardless of scale.
-</p>
-<p style={{ textAlign: "center" }}>
-  Whether you need generator overhauls, one-off maintenance visits, tailored service contracts, or generators for sale, we are committed to delivering the right solutions every time.
-</p>
+            {/* Dynamically inserted description */}
+            {desc && (
+              <p style={{ textAlign: "center" }} dangerouslySetInnerHTML={{ __html: desc }}>
 
+              </p>
+            )}
           </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div className="section section--services">
           <div className="services-intro">
             <h3 className="section--title">Our Services</h3>
           </div>
           <div className="services">
-            <div className="services__service">
-              <div className="service-image">
-                <img
-                  alt="Diesel Power Generators for Sale Nationwide Standby Generators Emergency Diesel Power Generators for sale London Essex Hertfordshire for sale"
-                  src="https://ucarecdn.com/04aa3576-95de-466a-a1c4-8b6250af70b1/dieselgenerator.jpg"
-                />
+            {servicesData.map((service, index) => (
+              <div key={index} className="services__service">
+                <div className="service-image">
+                  <img alt={service.name} src={service.img[0]} />
+                </div>
+                <h3 className="service-title">{service.name}</h3>
+                <div className="service-content">
+                  <h4 style={{ textAlign: "center" }} dangerouslySetInnerHTML={{ __html: service.desc }}> 
+                  </h4>
+                </div>
+                <div className="services-button">
+                  <a href={service.link} className="button">
+                    More about {service.name}
+                  </a>
+                </div>
               </div>
-              <h3 className="service-title">Generators for Sale </h3>
-              <div className="service-content">
-                <h4 style={{ textAlign: "center" }}>
-                  Generators for sale from 2.0 kVa to 2500 kVa
-                </h4>
-              </div>
-              <div className="services-button">
-                <a href="/products" className="button">
-                  More about Sales
-                </a>
-              </div>
-            </div>
-            <div className="services__service">
-              <div className="service-image">
-                <img
-                  alt="Diesel Generators for Sale Diesel generator maintenance Standby Generators Emergency Diesel Power Generator sales London Essex Hertfordshire Nationwide"
-
-                  src="https://ucarecdn.com/cbeb99d7-761d-41ed-b0b1-9ff2042ef69d/DieselGeneratormaintenace.jpg"
-                />
-              </div>
-              <h3 className="service-title">Generator Maintenance and services </h3>
-              <div className="service-content">
-                <h4 style={{ textAlign: "center" }}>
-                  One off service or tailored maintenance contracts
-                </h4>
-              </div>
-              <div className="services-button">
-                <a href="/services" className="button">
-                  More about Maintenance
-                </a>
-              </div>
-            </div>
-            <div className="services__service">
-              <div className="service-image">
-                <img
-                  alt="Diesel generator rental Standby Generators for sale Emergency Diesel Power Generator sales London Essex Hertfordshire"
-                  src="https://ucarecdn.com/c43d1ecf-a648-4365-906c-a24109dfb0b4/Generatorhirerental.jpg"
-                />
-              </div>
-              <h3 className="service-title">Nationwide Generator Hire </h3>
-              <div className="service-content">
-                <h4 style={{ textAlign: "center" }}>
-                  Nationwide generator hire from 2.5 to 1500 kVa
-                </h4>
-              </div>
-              <div className="services-button">
-                <a href="/services" className="button">
-                  More about Hire
-                </a>
-              </div>
-            </div>
-            <div className="services__service">
-              <div className="service-image">
-                <img
-                  alt="Standby Generators Emergency Diesel Power Generators for sale London Essex Hertfordshire"
-                  src="https://ucarecdn.com/d7382f42-de5c-46c2-beea-10451f90ad39/GPSContactus.jpg"
-                />
-              </div>
-              <h3 className="service-title">Contact GPS </h3>
-              <div className="service-content">
-                <h4 style={{ textAlign: "center" }}>Speak to our team</h4>
-              </div>
-              <div className="services-button">
-                <a href="/contact" className="button">
-                  Get in Touch
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -159,7 +154,7 @@ export default function Home() {
         <Footer />
       </div>
 
- 
+
 
       <style
         dangerouslySetInnerHTML={{

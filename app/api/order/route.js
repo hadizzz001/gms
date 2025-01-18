@@ -1,4 +1,7 @@
 import { PrismaClient } from "@prisma/client";
+import { Resend } from "resend"; 
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const prisma = new PrismaClient();
 
@@ -16,7 +19,7 @@ export async function POST(req) {
       },
     });
 
-    // Format WhatsApp message
+    // Format the cart details
     const cartDetails = cartItems
       .map(
         (item, index) =>
@@ -24,11 +27,43 @@ export async function POST(req) {
       )
       .join("\n");
 
+    const totalAmount = cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+
     const whatsappMessage = `https://wa.me/+96176839590/?text=${encodeURIComponent(
-      `*New Order Received:*\n\n*User Information:*\nName: ${userInfo.name}\nPhone: ${userInfo.phone}\nAddress: ${userInfo.address}\n\n*Cart Details:*\n${cartDetails}\n\n*Total Amount:* $${cartItems
-        .reduce((total, item) => total + item.price * item.quantity, 0)
-         }`
+      `*New Order Received:*\n\n*User Information:*\nName: ${userInfo.name}\nPhone: ${userInfo.phone}\nAddress: ${userInfo.address}\n\n*Cart Details:*\n${cartDetails}\n\n*Total Amount:* $${totalAmount}`
     )}`;
+
+    // Construct the HTML content for the email
+    const htmlContent = `
+      <h1>New Order Received</h1>
+      <p><strong>User Information:</strong></p>
+      <ul>
+        <li><strong>Name:</strong> ${userInfo.name}</li>
+        <li><strong>Phone:</strong> ${userInfo.phone}</li>
+        <li><strong>Address:</strong> ${userInfo.address}</li>
+      </ul>
+      <p><strong>Cart Details:</strong></p>
+      <ul>
+        ${cartItems
+          .map(
+            (item) =>
+              `<li>${item.title} - Qty: ${item.quantity}, Price: $${item.price}</li>`
+          )
+          .join("")}
+      </ul>
+      <p><strong>Total Amount:</strong> $${totalAmount}</p>
+    `;
+
+    // Send email after order is saved
+    await resend.emails.send({
+      from: "info@anazon.hadizproductions.com",
+      to: "alihadimedlej001@gmail.com",
+      subject: "New Order",
+      html: htmlContent,
+    });
 
     return new Response(
       JSON.stringify({

@@ -333,12 +333,19 @@ const PageContent = ({ search }) => {
                 className="relative w-full h-[700px] overflow-hidden" 
               >
                 {imgs && imgs.length > 0 ? (
+                  <>
                   <img
-                    src={imgs[currentImageIndex]}
-                    alt={`image-${currentImageIndex}`}
-                    className="w-full h-full object-cover rounded-lg transition-all  ease-in-out"
-                    id="mainImage"
-                  />
+  src={imgs[currentImageIndex]}
+  alt={`image-${currentImageIndex}`}
+  className="w-full h-full object-cover rounded-lg transition-all ease-in-out relative"
+  id="mainImage"
+/>
+<img
+  src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+  alt="Watermark"
+  className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
+/>
+</>
                 ) : (
                   <div className="text-center text-gray-500">No main image available</div>
                 )}

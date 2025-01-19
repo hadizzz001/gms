@@ -74,17 +74,23 @@ const ProductsCarousel = () => {
         {products.map((product) => (
           <Link href={`/product?id=${product.id}`} key={product.id}  >
           <div key={product.id} className="">
-            <div className="text-center">
-              <img
-                src={product.img[0]}
-                alt={product.title}
-                className="w-full h-80 object-contain mb-2"
-                style={{ background: "none" }}
-              />
-              <h3 className="text-sm font-semibold">{product.title}</h3>
-              <p className="text-gray-500">{product.category}</p> 
-              <p className="text-gray-500">${product.price}</p> 
-            </div>
+          <div className="text-center relative">
+  <img
+    src={product.img[0]}
+    alt={product.title}
+    className="w-full h-80 object-contain mb-2"
+    style={{ background: "none" }}
+  />
+  <img
+    src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+    alt="Watermark"
+    className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
+  />
+  <h3 className="text-sm font-semibold">{product.title}</h3>
+  <p className="text-gray-500">{product.category}</p>
+  <p className="text-gray-500">${product.price}</p>
+</div>
+
           </div>
           </Link>
         ))} 

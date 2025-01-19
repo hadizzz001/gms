@@ -1,19 +1,19 @@
 "use client";
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import Header from "../_components/Header"; 
+import Header from "../_components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "../_components/Footer";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import React, { useState, useEffect, Suspense } from 'react';
 
-const Dashboard = ({cat,brnd}) => {
-  const [allTemp, setTemp] = useState([]);       
-  const [allProd, setProd] = useState([]);        
-  const [allParts, setParts] = useState([]);     
-  const [allBrands, setBrands] = useState([]);     
+const Dashboard = ({ cat, brnd }) => {
+  const [allTemp, setTemp] = useState([]);
+  const [allProd, setProd] = useState([]);
+  const [allParts, setParts] = useState([]);
+  const [allBrands, setBrands] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredData, setFilteredData] = useState([]);  
+  const [filteredData, setFilteredData] = useState([]);
   const [expandedCategories, setExpandedCategories] = useState({
     Products: true,
     Parts: true,
@@ -79,7 +79,7 @@ const Dashboard = ({cat,brnd}) => {
         } finally {
           setLoading(false);
         }
-      } else if (brnd) {  
+      } else if (brnd) {
         try {
           setLoading(true);
 
@@ -191,7 +191,7 @@ const Dashboard = ({cat,brnd}) => {
   const allItemsLoaded = visibleItemsCount >= totalItemsCount; // Check if all items are displayed
 
   return (
-    <> 
+    <>
       <link rel="dns-prefetch" href="https://code.jquery.com/" />
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/" />
       <link rel="dns-prefetch" href="https://maps.googleapis.com/" />
@@ -332,7 +332,7 @@ const Dashboard = ({cat,brnd}) => {
         {/* Sidebar */}
         <aside className="w-full md:w-1/4 p-2 md:p-4 bg-gray-100">
 
-        <div>
+          <div>
             <h3
               onClick={() => handleCategoryClick('Brands')}
               className="flex items-center justify-between cursor-pointer text-lg font-semibold text-gray-800"
@@ -345,7 +345,7 @@ const Dashboard = ({cat,brnd}) => {
                 {allBrands.map((item, index) => (
                   <li key={index}>
                     <a href={`?brand=${item.name}`} className="text-gray-600 hover:text-blue-500 transition">
-                      {item.name} 
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -368,7 +368,7 @@ const Dashboard = ({cat,brnd}) => {
                 {allProd.map((item, index) => (
                   <li key={index}>
                     <a href={`?cat=${item.name}`} className="text-gray-600 hover:text-blue-500 transition">
-                      {item.name} 
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -422,7 +422,13 @@ const Dashboard = ({cat,brnd}) => {
                           alt={item.title}
                           className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 hover:opacity-100"
                         />
+                        <img
+                          src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+                          alt="Watermark"
+                          className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
+                        />
                       </div>
+
                     )}
                     <h2 style={{ textAlign: 'center' }} className="font-semibold text-lg text-[#0b5cad] mt-4">{item.title || `Item ${index + 1}`}</h2>
                     <p style={{ textAlign: 'center' }} className="text-gray-600">{item.category || "No type available."}</p>
@@ -445,16 +451,16 @@ const Dashboard = ({cat,brnd}) => {
           )}
         </main>
       </div>
- 
+
     </>
   );
 };
 
 
-const PageWrapper = () => { 
+const PageWrapper = () => {
   const searchParams = useSearchParams();
-  const cat = searchParams.get('cat');  
-  const brnd = searchParams.get('brand');  
+  const cat = searchParams.get('cat');
+  const brnd = searchParams.get('brand');
 
   return <Dashboard cat={cat} brnd={brnd} />;
 };

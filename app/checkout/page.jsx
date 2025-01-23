@@ -262,8 +262,8 @@ const CheckoutPage = () => {
       </div>
       <div className="footer-top mt-20">
         TO DISCUSS YOUR NEEDS CALL{" "}
-        <a href="tel:+9613502927">03502927</a> |{" "}
-        <a href="mailto:sales@gps-ltd.com">SALES@GPS-LTD.COM</a>{" "}
+        <a href="tel:+9613502927">71040388</a> |{" "}
+        <a href="mailto:services@gmspowergeneration.com">services@gmspowergeneration.com</a>{" "}
       </div>
       <Footer />
     </>

@@ -1,5 +1,16 @@
 import React from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faFacebookF, 
+  faTwitter, 
+  faInstagram, 
+  faTiktok, 
+  faYoutube 
+} from '@fortawesome/free-brands-svg-icons';
+
+
+
 const Footer = () => {
   return (
     <footer className="main-footer">
@@ -13,17 +24,33 @@ const Footer = () => {
               />
             </a>
             <div className="socials">
-              <ul>
-                <li className="socials__icon icon--facebook">
-                  <a href="http://www.facebook.com/GeneratedPowerServices" target="_blank" />
-                </li>
-                <li className="socials__icon icon--twitter">
-                  <a href="http://www.twitter.com/gps_limited" target="_blank" />
-                </li>
-                <li className="socials__icon icon--whatsapp">
-                  <a href="http://www.twitter.com/gps_limited" target="_blank" />
-                </li>
-              </ul>
+            <ul className="socials">
+      <li className="socials__icon">
+        <a href="http://www.facebook.com/GeneratedPowerServices" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faFacebookF} className="social-icon" style={{color:'white'}}/>
+        </a>
+      </li>
+      <li className="socials__icon">
+        <a href="http://www.twitter.com/gps_limited" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTwitter} className="social-icon"  style={{color:'white'}}/>
+        </a>
+      </li>
+      <li className="socials__icon">
+        <a href="http://www.instagram.com/yourpage" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faInstagram} className="social-icon" style={{color:'white'}}/>
+        </a>
+      </li>
+      <li className="socials__icon">
+        <a href="http://www.tiktok.com/@yourpage" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTiktok} className="social-icon" style={{color:'white'}}/>
+        </a>
+      </li>
+      <li className="socials__icon">
+        <a href="http://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faYoutube} className="social-icon" style={{color:'white'}}/>
+        </a>
+      </li>
+    </ul>
             </div>
           </div>
           <div className="footer-column">

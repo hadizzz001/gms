@@ -60,7 +60,7 @@ export async function POST(req) {
     // Send email after order is saved
     await resend.emails.send({
       from: "info@anazon.hadizproductions.com",
-      to: "alihadimedlej001@gmail.com",
+      to: "services@gmspowergeneration.com",
       subject: "New Order",
       html: htmlContent,
     });

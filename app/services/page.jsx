@@ -389,8 +389,8 @@ export default function Home() {
 
 
         <div className="footer-top">
-          TO DISCUSS YOUR NEEDS CALL <a href="tel:+9613502927">03502927</a> |{" "}
-          <a href="mailto:sales@gps-ltd.com">SALES@GPS-LTD.COM</a>{" "}
+          TO DISCUSS YOUR NEEDS CALL <a href="tel:+9613502927">71040388</a> |{" "}
+          <a href="mailto:services@gmspowergeneration.com">services@gmspowergeneration.com</a>{" "}
         </div>
         <Footer />
       </div>

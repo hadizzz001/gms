@@ -228,16 +228,12 @@ export default function Home() {
       </div>
 
       <div className="mt-20 mb-20" style={{ textAlign: 'center', color: '#0b5cad', fontSize: '20px' }}>
-  <p style={{ fontWeight: 'bold', marginBottom: '10px' }}>Our Phone Numbers:</p>
+  <p style={{ fontWeight: 'bold', marginBottom: '10px' }}>Our Phone Number:</p>
   <div>
     <a href="tel:+91896800" style={{ marginRight: '20px', fontSize: '24px', textDecoration: 'none', color: '#0b5cad' }}>
       <i className="fas fa-phone-alt" style={{ marginRight: '5px' }}></i>
       01896800
-    </a>
-    <a href="tel:+9171040388" style={{ fontSize: '24px', textDecoration: 'none', color: '#0b5cad' }}>
-      <i className="fas fa-phone-alt" style={{ marginRight: '5px' }}></i>
-      71040388
-    </a>
+    </a> 
   </div>
 </div>
 

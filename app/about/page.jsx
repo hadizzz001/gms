@@ -179,7 +179,7 @@ export default function Home() {
 
 
         <div className="footer-top">
-          TO DISCUSS YOUR NEEDS CALL <a href="tel:+9613502927">71040388</a> |{" "}
+          TO DISCUSS YOUR NEEDS CALL <a href="tel:+96171040388">71040388</a> |{" "}
           <a href="mailto:services@gmspowergeneration.com">services@gmspowergeneration.com</a>{" "}
         </div>
         <Footer />

@@ -262,7 +262,7 @@ const CheckoutPage = () => {
       </div>
       <div className="footer-top mt-20">
         TO DISCUSS YOUR NEEDS CALL{" "}
-        <a href="tel:+9613502927">71040388</a> |{" "}
+        <a href="tel:+96171040388">71040388</a> |{" "}
         <a href="mailto:services@gmspowergeneration.com">services@gmspowergeneration.com</a>{" "}
       </div>
       <Footer />

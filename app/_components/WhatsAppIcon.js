@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const WhatsAppIcon = () => {
   return (
     <a
-      href="https://wa.me/+9613502927" // Replace with your WhatsApp number
+      href="https://wa.me/+96171040388" // Replace with your WhatsApp number
       target="_blank"
       rel="noopener noreferrer"
       style={{

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import Header from "../_components/Header"; 
+import Header from "../_components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "../_components/Footer";
 import ProductsList from "../_components/ProductsList";
@@ -58,7 +58,7 @@ const PageContent = ({ search }) => {
     return <p>No data found</p>;
   }
 
-  const { id, img: imgs, title,price, description, type, brand, category } = productData;
+  const { id, img: imgs, title, price, description, type, brand, category } = productData;
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index);
@@ -120,12 +120,12 @@ const PageContent = ({ search }) => {
 
   return (
     <>
- 
+
       <link rel="dns-prefetch" href="https://code.jquery.com/" />
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/" />
       <link rel="dns-prefetch" href="https://maps.googleapis.com/" />
       <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
- 
+
       <link
         rel="stylesheet"
         id="wp-block-library-css"
@@ -240,7 +240,7 @@ const PageContent = ({ search }) => {
       />
       <link rel="shortcut icon" type="image/png" href="index.html" />
       <link rel="stylesheet" href="https://use.typekit.net/dmf2gez.css" />
- 
+
 
       <div className="min-h-screen flex flex-col items-center  py-12 mt-20">
         <div className="flex flex-col lg:flex-row w-full p-6 bg-white rounded-lg  ">
@@ -330,22 +330,22 @@ const PageContent = ({ search }) => {
                 </div>
               </div>
               <div
-                className="relative w-full h-[700px] overflow-hidden" 
+                className="relative w-full h-[700px] overflow-hidden"
               >
                 {imgs && imgs.length > 0 ? (
                   <>
-                  <img
-  src={imgs[currentImageIndex]}
-  alt={`image-${currentImageIndex}`}
-  className="w-full h-full object-cover rounded-lg transition-all ease-in-out relative"
-  id="mainImage"
-/>
-<img
-  src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
-  alt="Watermark"
-  className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
-/>
-</>
+                    <img
+                      src={imgs[currentImageIndex]}
+                      alt={`image-${currentImageIndex}`}
+                      className="w-full h-full object-cover rounded-lg transition-all ease-in-out relative"
+                      id="mainImage"
+                    />
+                    <img
+                      src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+                      alt="Watermark"
+                      className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
+                    />
+                  </>
                 ) : (
                   <div className="text-center text-gray-500">No main image available</div>
                 )}
@@ -419,11 +419,18 @@ const PageContent = ({ search }) => {
               {/* Main Image */}
               <div className="relative w-full">
                 {imgs && imgs.length > 0 ? (
-                  <img
-                    src={imgs[currentImageIndex]}
-                    alt={`image-${currentImageIndex}`}
-                    className="w-full h-64 object-cover rounded-lg transition-all duration-100 ease-in-out"
-                  />
+                  <>
+                    <img
+                      src={imgs[currentImageIndex]}
+                      alt={`image-${currentImageIndex}`}
+                      className="w-full h-64 object-cover rounded-lg transition-all duration-100 ease-in-out"
+                    />
+                    <img
+                      src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+                      alt="Watermark"
+                      className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
+                    />
+                  </>
                 ) : (
                   <div className="text-center text-gray-500">No main image available</div>
                 )}
@@ -439,47 +446,47 @@ const PageContent = ({ search }) => {
             <h4  >Type: {type}</h4>
             <h4  >Category: {category}</h4>
             <h4 className="section--title">${price}</h4>
-       
+
 
 
 
 
             <div className="flex items-center mt-6">
-          <button
-            onClick={() => handleQuantityChange("decrease")}
-            className="bg-gray-200 text-gray-700 px-4 py-2 rounded-l hover:bg-gray-300"
-          >
-            -
-          </button>
-          <input
-            type="number"
-            value={quantity}
-            readOnly
-            className="w-16 text-center border border-gray-300"
-          />
-          <button
-            onClick={() => handleQuantityChange("increase")}
-            className="bg-gray-200 text-gray-700 px-4 py-2 rounded-r hover:bg-gray-300"
-          >
-            +
-          </button>
-        </div>
+              <button
+                onClick={() => handleQuantityChange("decrease")}
+                className="bg-gray-200 text-gray-700 px-4 py-2 rounded-l hover:bg-gray-300"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                value={quantity}
+                readOnly
+                className="w-16 text-center border border-gray-300"
+              />
+              <button
+                onClick={() => handleQuantityChange("increase")}
+                className="bg-gray-200 text-gray-700 px-4 py-2 rounded-r hover:bg-gray-300"
+              >
+                +
+              </button>
+            </div>
 
 
 
 
             {isInCart ? (
-        <p className="block bg-green-100 text-green-600 text-center py-3 px-8 rounded-lg mt-6">
-          Item added to cart successfully!
-        </p>
-      ) : (
-        <a
-          onClick={() => addToCart(productData)}
-          className="block bg-green-600 text-white text-center py-3 px-8 rounded-lg hover:bg-green-700 transition duration-300 mt-6 cursor-pointer"
-        >
-          Add to Cart
-        </a>
-      )}
+              <p className="block bg-green-100 text-green-600 text-center py-3 px-8 rounded-lg mt-6">
+                Item added to cart successfully!
+              </p>
+            ) : (
+              <a
+                onClick={() => addToCart(productData)}
+                className="block bg-green-600 text-white text-center py-3 px-8 rounded-lg hover:bg-green-700 transition duration-300 mt-6 cursor-pointer"
+              >
+                Add to Cart
+              </a>
+            )}
 
 
             <ul className="mt-6 space-y-4">
@@ -504,7 +511,7 @@ const PageContent = ({ search }) => {
                   </i>
                 </span>
                 <div className="flex flex-col">
-                  <b className="bold">Shipping</b> 
+                  <b className="bold">Shipping</b>
                 </div>
               </li>
               <li className="text-gray-700 text-sm flex items-start">
@@ -536,7 +543,7 @@ const PageContent = ({ search }) => {
                   </i>
                 </span>
                 <div className="flex flex-col">
-                  <b className="bold">Free Pick Up At Our Warehouse</b> 
+                  <b className="bold">Free Pick Up At Our Warehouse</b>
                 </div>
               </li>
               <li className="text-gray-700 text-sm flex items-start">
@@ -593,7 +600,7 @@ const PageContent = ({ search }) => {
         <div className=" container  ">
           <div className=" "> </div>
 
-         
+
 
 
 
@@ -611,10 +618,10 @@ const PageContent = ({ search }) => {
               dangerouslySetInnerHTML={{ __html: description }}
             />
           )}
-           
+
         </div>
 
- 
+
 
 
         <h1 className="section--title">Related Products</h1>
@@ -626,10 +633,10 @@ const PageContent = ({ search }) => {
       </div>
 
       <style
-  dangerouslySetInnerHTML={{
-    __html: "\n    .section--title {\ntext-align: left !important;\n}\n"
-  }}
-/>
+        dangerouslySetInnerHTML={{
+          __html: "\n    .section--title {\ntext-align: left !important;\n}\n"
+        }}
+      />
 
 
 

@@ -20,7 +20,7 @@ const Footer = () => {
             <a href="/">
               <img
                 alt="Standby Generators Emergency Diesel Power Generator sales London Essex Hertfordshire"
-                src="https://ucarecdn.com/f3eebafc-fc8d-4343-8216-c92ce1f82962/logowhite.png"
+                src="/api/proxy?url=https://ucarecdn.com/f3eebafc-fc8d-4343-8216-c92ce1f82962/logowhite.png"
               />
             </a>
             <div className="socials">

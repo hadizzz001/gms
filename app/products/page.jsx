@@ -413,17 +413,17 @@ const Dashboard = ({ cat, brnd }) => {
                     {item.img && (
                       <div className="relative">
                         <img
-                          src={`api/proxy?url=${item.img[0]}`}
+                          src={`/api/proxy?url=${item.img[0]}`}
                           alt={item.title}
                           className="w-full aspect-[1/1] object-cover mb-4 transition-all duration-300"
                         />
                         <img
-                          src={`api/proxy?url=${item.img[1]}`}
+                          src={`/api/proxy?url=${item.img[1]}`}
                           alt={item.title}
                           className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 hover:opacity-100"
                         />
                         <img
-                          src="api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+                          src="/api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
                           alt="Watermark"
                           className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
                         />

@@ -76,13 +76,13 @@ const ProductsCarousel = () => {
           <div key={product.id} className="">
           <div className="text-center relative">
   <img
-    src={product.img[0]}
+  src={`/api/proxy?url=${product.img[0]}`} 
     alt={product.title}
     className="w-full h-80 object-contain mb-2"
     style={{ background: "none" }}
   />
   <img
-    src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+    src="/api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
     alt="Watermark"
     className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
   />

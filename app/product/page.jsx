@@ -277,7 +277,7 @@ const PageContent = ({ search }) => {
                         }}
                       >
                         <img 
-                          src={`api/proxy?url=${img}`} 
+                          src={`/api/proxy?url=${img}`} 
                           alt={`thumbnail-${index}`}
                           className="w-full h-full object-cover cursor-pointer"
                           onClick={() => handleThumbnailClick(index)}
@@ -335,13 +335,13 @@ const PageContent = ({ search }) => {
                 {imgs && imgs.length > 0 ? (
                   <>
                     <img
-                    src={`api/proxy?url=${imgs[currentImageIndex]}`}  
+                    src={`/api/proxy?url=${imgs[currentImageIndex]}`}  
                       alt={`image-${currentImageIndex}`}
                       className="w-full h-full object-cover rounded-lg transition-all ease-in-out relative"
                       id="mainImage"
                     />
                     <img
-                      src="api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+                      src="/api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
                       alt="Watermark"
                       className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
                     />
@@ -382,7 +382,7 @@ const PageContent = ({ search }) => {
                   {imgs.map((img, index) => (
                     <img
                       key={index}
-                      src={`api/proxy?url=${img}`} 
+                      src={`/api/proxy?url=${img}`} 
                       alt={`thumbnail-${index}`}
                       className={`w-16 h-16 object-cover rounded-lg cursor-pointer transition-transform duration-300 ease-in-out ${currentImageIndex === index
                         ? "scale-105 border-2 border-blue-600"
@@ -421,12 +421,12 @@ const PageContent = ({ search }) => {
                 {imgs && imgs.length > 0 ? (
                   <>
                     <img
-                    src={`api/proxy?url=${imgs[currentImageIndex]}`} 
+                    src={`/api/proxy?url=${imgs[currentImageIndex]}`} 
                       alt={`image-${currentImageIndex}`}
                       className="w-full h-64 object-cover rounded-lg transition-all duration-100 ease-in-out"
                     />
                     <img
-                      src="api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+                      src="/api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
                       alt="Watermark"
                       className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
                     />

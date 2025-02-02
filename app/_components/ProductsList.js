@@ -57,12 +57,12 @@ const ProductsList = ({ type }) => {
             <Link href={`/product?id=${product.id}`} passHref>
             <div className="cursor-pointer border p-4 rounded shadow hover:shadow-lg transition relative">
   <img
-    src={product.img?.[0] || "/placeholder.jpg"}
+  src={`/api/proxy?url=${product.img?.[0]}`} 
     alt={product.title}
     className="w-full h-48 object-cover rounded mb-3"
   />
-  <img
-    src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+  <img 
+    src="/api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
     alt="Watermark"
     className="absolute top-0 right-0 p-4 opacity-50" // Adjust opacity, position, and padding as needed
   />

@@ -36,7 +36,7 @@ const Header = () => {
               alt="Standby Generators Emergency Diesel Power Generator sales London Essex Hertfordshire"
               className=" "
               style={{ width: "70%", height: "auto", maxWidth: "initial", maxHeight: "initial" }}
-              src="https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
+              src="/api/proxy?url=https://ucarecdn.com/4be8ddad-5bbd-4bc5-ba0b-7cae4575a4e5/logo.png"
             />
           </a>{" "}
         </div>

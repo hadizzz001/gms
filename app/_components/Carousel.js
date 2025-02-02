@@ -47,7 +47,7 @@ const MyCarousel = () => {
         {slides.map((slide) => (
           <div key={slide.id} className="hero-carousel__slide" style={{ position: "relative" }}>
             <img
-              src={slide.image}
+            src={`/api/proxy?url=${slide.image}`}  
               alt={slide.topLine}
               className="hero-carousel__image"
               style={{

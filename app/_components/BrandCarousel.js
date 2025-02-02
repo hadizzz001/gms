@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const BrandCarousel = () => {
   const [brands, setBrands] = useState([]);
-  
+
   useEffect(() => {
     const fetchBrands = async () => {
       try {
@@ -23,7 +23,7 @@ const BrandCarousel = () => {
     fetchBrands();
   }, []);
 
-  const settings = { 
+  const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -80,17 +80,18 @@ const BrandCarousel = () => {
       <Slider {...settings}>
         {brands.length > 0 ? (
           brands.map((brand, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               style={{ display: 'flex', height: '200px' }}
             >
-              <Image
-                src={brand}
+              <img
+                src={`/api/proxy?url=${brand}`}
                 alt={`Brand ${index + 1}`}
                 width={150}
                 height={100}
                 priority={true}
               />
+
             </div>
           ))
         ) : (

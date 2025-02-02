@@ -151,7 +151,8 @@ export default function Home() {
               {/* Image */}
               <div className="w-full md:w-1/2">
                 <img
-                  src="https://ucarecdn.com/58fc5c5a-bd21-410f-8b5f-72e81e3a555a/360_F_360651391_AnfbHoBiAED6S03W5AqOGutL9jwotRLt.jpg"
+                
+                  src="api/proxy?url=https://ucarecdn.com/58fc5c5a-bd21-410f-8b5f-72e81e3a555a/360_F_360651391_AnfbHoBiAED6S03W5AqOGutL9jwotRLt.jpg"
                   alt="About GMS Power Generation"
                   className="rounded-lg shadow-md w-full"
                 />

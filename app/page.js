@@ -119,7 +119,7 @@ export default function Home() {
             {servicesData.map((service, index) => (
               <div key={index} className="services__service">
                 <div className="service-image">
-                  <img alt={service.name} src={service.img[0]} />
+                  <img alt={service.name}   src={`api/proxy?url=${service.img[0]}`}/>
                 </div>
                 <h3 className="service-title">{service.name}</h3>
                 <div className="service-content">

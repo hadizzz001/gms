@@ -171,10 +171,10 @@ export default function Home() {
           </div>
           <div className="section section--half-image-half-text">
             <div className="half-image">
-              <img src="https://ucarecdn.com/3f416f2d-ad91-4369-b8ad-d7937c082ee7/s1.webp"
+              <img src="api/proxy?url=https://ucarecdn.com/3f416f2d-ad91-4369-b8ad-d7937c082ee7/s1.webp"
               className="m-1"
               /> 
-              <img src="https://ucarecdn.com/e53a3ecf-d7a8-40b4-b5d4-7399a59ec234/s1a.webp"
+              <img src="api/proxy?url=https://ucarecdn.com/e53a3ecf-d7a8-40b4-b5d4-7399a59ec234/s1a.webp"
               className="m-1"
               /> 
             </div>
@@ -194,7 +194,8 @@ export default function Home() {
           </div>
           <div className="section section--half-image-half-text">
             <div className="half-image">
-              <img src="https://ucarecdn.com/900ffd16-0076-4000-baa0-10687a40247b/s2.webp"
+              
+              <img src="api/proxy?url=https://ucarecdn.com/900ffd16-0076-4000-baa0-10687a40247b/s2.webp"
               /> 
             </div>
             <div className="half-text">
@@ -256,7 +257,7 @@ export default function Home() {
           <div className="section section--half-image-half-text">
             <div className="half-image">
               <img  
-                src="https://ucarecdn.com/4b8e42ed-77d4-4614-820f-817fb44bd34b/s3.webp"
+                src="api/proxy?url=https://ucarecdn.com/4b8e42ed-77d4-4614-820f-817fb44bd34b/s3.webp"
               /> 
             </div>
             <div className="half-text">
@@ -282,15 +283,15 @@ export default function Home() {
           <div className="section section--half-image-half-text">
             <div className="half-image">
               <img 
-                src="https://ucarecdn.com/820ba617-e95c-4e76-9297-a9fbdf4ae3ae/s4.webp"
+                src="api/proxy?url=https://ucarecdn.com/820ba617-e95c-4e76-9297-a9fbdf4ae3ae/s4.webp"
                 className="m-1"
               /> 
               <img 
-                src="https://ucarecdn.com/1f94ef99-3047-4364-ba64-8e311188204d/s4a.webp"
+                src="api/proxy?url=https://ucarecdn.com/1f94ef99-3047-4364-ba64-8e311188204d/s4a.webp"
                 className="m-1"
               /> 
               <img 
-                src="https://ucarecdn.com/eeea7eb6-1985-4bef-b5a5-f8f441081f47/s4b.webp"
+                src="api/proxy?url=https://ucarecdn.com/eeea7eb6-1985-4bef-b5a5-f8f441081f47/s4b.webp"
                 className="m-1"
               /> 
             </div>

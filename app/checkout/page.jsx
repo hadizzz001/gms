@@ -189,7 +189,7 @@ const CheckoutPage = () => {
                     >
                       {item.img && item.img[0] && (
                         <img
-                          src={item.img[0]}
+                        src={`api/proxy?url=${item.img[0]}`} 
                           alt={item.title}
                           style={{
                             width: "50px",

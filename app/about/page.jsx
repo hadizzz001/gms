@@ -149,28 +149,15 @@ export default function Home() {
             <h1 className="text-4xl font-bold text-[#0b5cad] mb-6 text-center">About Us</h1>
             <div className="flex flex-col md:flex-row items-center gap-8">
               {/* Image */}
-              <div className="w-full md:w-1/2">
-                <img
-                
-                  src="api/proxy?url=https://ucarecdn.com/58fc5c5a-bd21-410f-8b5f-72e81e3a555a/360_F_360651391_AnfbHoBiAED6S03W5AqOGutL9jwotRLt.jpg"
-                  alt="About GMS Power Generation"
-                  className="rounded-lg shadow-md w-full"
-                />
-              </div>
+               
               {/* Text Content */}
-              <div className="w-full md:w-1/2">
-                <h2 className="text-2xl font-semibold text-gray-700 mb-4">
-                  Powering Lebanon with Reliable Generators and Expert Maintenance
-                </h2>
+              <div className="w-full  "> 
                 <p className="text-gray-600 mb-4">
-                  GMS Power Generation is a leading provider of power generators and maintenance services based in Lebanon. We specialize in offering high-quality generators for both residential and commercial needs. Our team is dedicated to ensuring your power systems run smoothly and efficiently, providing reliable solutions even during Lebanon's most challenging power outages.
+                  GMS POWER GENERATION is a diesel generator set manufacturer, which formerly a professional alternator manufacturer since 2003 of production experience, to supply and maintain to many well-known diesel generators set factories in Lebanon, having good market feedback and domestic alternator share. With the expansion of production scale and confidence in expanding products range.
+                  At present, GMS POWER GENERATION has established cooperation with major engine brands such as Cummins DCEC/CCEC，Perkins，Deutz, Caterpillar, MTU, Volvo Penta, Mitsubishi tec… actively providing customers with high-quality generator set and professional technical support. In addition, GMS POWER GENERATION also provides customers with a variety of generator products to meet different usage requirements, like diesel generator set with Open Type, Silent Type, Super Silent Type and Container Type; AC Alternator; ATS System; Synchronization System for Power and Mains ……, GMS POWER GENERATION has professional technical and production team to support customers with high-quality services.
+
                 </p>
-                <ul className="list-disc pl-6 text-gray-600">
-                  <li>High-quality power generators for various needs</li>
-                  <li>Comprehensive maintenance and repair services</li>
-                  <li>Committed to delivering reliable power solutions across Lebanon</li>
-                  <li>Years of expertise in ensuring optimal generator performance</li>
-                </ul>
+
               </div>
             </div>
           </div>

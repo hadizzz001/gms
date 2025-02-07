@@ -37,14 +37,14 @@ export default function RootLayout({ children }) {
   <meta property="og:type" content="website" />
   <meta
     property="og:title"
-    content="Diesel Generators For Sale - Power Generator Experts GPS"
+    content="Diesel Generators For Sale "
   />
   <meta
     property="og:description"
     content="Diesel generators for sale, hire servicing & maintenance. Businesses & events in Hertfordshire, Essex and South East. Based Herts SG12 8PP."
   />
-  <meta property="og:url" content="https://www.gps-ltd.com/" />
-  <meta property="og:site_name" content="Power Generator Experts GPS" />
+  <meta property="og:url" content="https://gmspowergeneration.com/" />
+  <meta property="og:site_name" content="GMS POWER GENERATION" />
   <meta property="article:modified_time" content="2023-02-10T10:38:09+00:00" />
   <meta name="twitter:card" content="summary_large_image" />
   {/* / Yoast SEO plugin. */}

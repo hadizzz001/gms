@@ -276,8 +276,8 @@ const PageContent = ({ search }) => {
                               : 0.5,
                         }}
                       >
-                        <img 
-                          src={`/api/proxy?url=${img}`} 
+                        <img
+                          src={`/api/proxy?url=${img}`}
                           alt={`thumbnail-${index}`}
                           className="w-full h-full object-cover cursor-pointer"
                           onClick={() => handleThumbnailClick(index)}
@@ -335,7 +335,7 @@ const PageContent = ({ search }) => {
                 {imgs && imgs.length > 0 ? (
                   <>
                     <img
-                    src={`/api/proxy?url=${imgs[currentImageIndex]}`}  
+                      src={`/api/proxy?url=${imgs[currentImageIndex]}`}
                       alt={`image-${currentImageIndex}`}
                       className="w-full h-full object-cover rounded-lg transition-all ease-in-out relative"
                       id="mainImage"
@@ -382,7 +382,7 @@ const PageContent = ({ search }) => {
                   {imgs.map((img, index) => (
                     <img
                       key={index}
-                      src={`/api/proxy?url=${img}`} 
+                      src={`/api/proxy?url=${img}`}
                       alt={`thumbnail-${index}`}
                       className={`w-16 h-16 object-cover rounded-lg cursor-pointer transition-transform duration-300 ease-in-out ${currentImageIndex === index
                         ? "scale-105 border-2 border-blue-600"
@@ -421,7 +421,7 @@ const PageContent = ({ search }) => {
                 {imgs && imgs.length > 0 ? (
                   <>
                     <img
-                    src={`/api/proxy?url=${imgs[currentImageIndex]}`} 
+                      src={`/api/proxy?url=${imgs[currentImageIndex]}`}
                       alt={`image-${currentImageIndex}`}
                       className="w-full h-64 object-cover rounded-lg transition-all duration-100 ease-in-out"
                     />
@@ -444,7 +444,23 @@ const PageContent = ({ search }) => {
             <h1 className="section--title"> {title}</h1>
             <h4  >Brand: {brand}</h4>
             <h4  >Type: {type}</h4>
-            <h4  >Category: {category}</h4>
+            <h4  >
+
+
+
+
+              {category === "Out of stock" ? (
+               <></>
+              ) : ( 
+                  <>
+                    Category: {category}
+                  </>
+              
+              )}
+
+
+
+            </h4>
             <h4 className="section--title">${price}</h4>
 
 
@@ -475,18 +491,25 @@ const PageContent = ({ search }) => {
 
 
 
-            {isInCart ? (
-              <p className="block bg-green-100 text-green-600 text-center py-3 px-8 rounded-lg mt-6">
-                Item added to cart successfully!
+            {category === "Out of stock" ? (
+              <p className="block bg-red-100 text-red-600 text-center py-3 px-8 rounded-lg mt-6 font-bold">
+                Out of Stock
               </p>
             ) : (
-              <a
-                onClick={() => addToCart(productData)}
-                className="block bg-green-600 text-white text-center py-3 px-8 rounded-lg hover:bg-green-700 transition duration-300 mt-6 cursor-pointer"
-              >
-                Add to Cart
-              </a>
+              isInCart ? (
+                <p className="block bg-green-100 text-green-600 text-center py-3 px-8 rounded-lg mt-6">
+                  Item added to cart successfully!
+                </p>
+              ) : (
+                <a
+                  onClick={() => addToCart(productData)}
+                  className="block bg-green-600 text-white text-center py-3 px-8 rounded-lg hover:bg-green-700 transition duration-300 mt-6 cursor-pointer"
+                >
+                  Add to Cart
+                </a>
+              )
             )}
+
 
 
             <ul className="mt-6 space-y-4">

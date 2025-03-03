@@ -2,6 +2,8 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+export const revalidate = 10;
+
 export async function GET(request, { params }) {
   const { category } = params;  
 

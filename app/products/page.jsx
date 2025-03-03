@@ -52,33 +52,31 @@ const Dashboard = ({ cat, brnd }) => {
       if (cat) {
         try {
           setLoading(true);
-
-          const response = await fetch(`/api/products/${cat}`);
+        
+          const response = await fetch(`/api/products`);
           const data = await response.json();
           console.log("code: ", response.status);
+        
           if (Array.isArray(data)) {
-            console.log("enter 0");
-            if (response.status === 404) {
-              console.log("enter 1");
-
-              // If no data is returned, display an empty message
-              setFilteredData([]);
-              setTotalItemsCount(0);
-            } else {
-              console.log("enter 2");
-              setFilteredData(data);
-              setTotalItemsCount(data.length); // Set the total number of items for the category
+            let filteredProducts = data;
+            
+            if (cat) {
+              filteredProducts = data.filter(product => product.category === cat);
             }
+        
+            setFilteredData(filteredProducts);
+            setTotalItemsCount(filteredProducts.length);
           } else {
             setFilteredData([]);
             setTotalItemsCount(0);
             console.error("Expected an array, but got:", data);
           }
         } catch (error) {
-          console.error("Failed to fetch category data:", error);
+          console.error("Failed to fetch products:", error);
         } finally {
           setLoading(false);
         }
+        
       } else if (brnd) {
         try {
           setLoading(true);
